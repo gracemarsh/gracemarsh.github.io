@@ -20,8 +20,39 @@ Use SVG images for contact information icons.
   --tert-col: #474747;
   --tert-col: light #d5d8d5;
 }
+/* to use the variables write ->  var(--main-col-red) */
 
 /* -- FONTS ------------------------------------------------- */
+body {
+  color: var(--body-col);
+}
+/* -- TYPEWRITING ADVERT ------------------------------------------------- */
+.advert {
+  display: flex;
+  color: var(--body-col);
+  background-color: lavenderblush;
+}
+.typing {
+  position: relative;
+  margin-left: 10px;
+}
+.typing:after {
+  content: "";
+  position: absolute;
+  right: -5px;
+  width: 1px;
+  height: 100%;
+  border-right: 2px solid black;
+  animation: blink 0.7s infinite ease;
+}
+@keyframes blink {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
 
 /* -- IMAGE STYLES ------------------------------------------------- */
 
