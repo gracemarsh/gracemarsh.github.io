@@ -1,6 +1,24 @@
+/* 
+Link to more than 6 projects.
+Use SVG images for contact information icons.
+
+
+*/
 /* -- MAIN STYLES ------------------------------------------------- */
 * {
   box-sizing: border-box;
+}
+
+/* -- VARIABLES ------------------------------------------------- */
+:root {
+  --main-col-red: #a33100;
+  --main-col-orange: #c5591b;
+  --main-col-yellow: #f5af00;
+  --sec-col-green: #76704c;
+  --sec-col-dark: #3f4634;
+  --body-col: #131b0d;
+  --tert-col: #474747;
+  --tert-col: light #d5d8d5;
 }
 
 /* -- FONTS ------------------------------------------------- */
