@@ -26,9 +26,12 @@ let letter = "";
   letter = currentText.slice(0, ++index);
 
   document.querySelector(".typing").textContent = letter;
+
   if (letter.length === currentText.length) {
     count++;
     index = 0;
+    setTimeout(type, 1500);
+  } else {
+    setTimeout(type, 150);
   }
-  setTimeout(type, 150);
 })();

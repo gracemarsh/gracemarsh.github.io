@@ -4,6 +4,12 @@
     <!-- what is the UTF-8 for? -->
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+      integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T"
+      crossorigin="anonymous"
+    />
 
     <link href="./normalize.css" rel="stylesheet" />
     <link href="./styles.css" rel="stylesheet" />
@@ -12,31 +18,252 @@
   </head>
   <body>
     <header>
-      <h1>Grace Notes Web Solutions</h1>
+      <h1>Grace Notes</h1>
+      <h2>Web Solutions</h2>
     </header>
     <main>
       <!-- advert -->
-      <section>
+      <section class="advert-container">
         <p>Do you find yourself asking ...</p>
+        <br />
         <div class="advert">
-          <h2>Why is my website ...</h2>
-          <h2 class="typing">hi</h2>
+          <h3>Why is my website ...</h3>
+          <h3 class="typing"></h3>
         </div>
         <!-- JS GOES HERE to generate the typewriting-->
       </section>
 
-      <!-- design -->
+      <!-- Help Text -->
+      <section>
+        <h3>We're here to help.</h3>
+        <p>
+          Websites are the home of most businesses and Grace Notes is all about
+          making sure that your home is warm, hospitable and going to make your
+          customers fall in love with you.
+        </p>
+        <p>
+          We’re passionate about making websites that embody your brand and help
+          your business to grow.
+        </p>
+      </section>
+
+      <!-- About Me Text -->
+      <section>
+        <h3>Hi, I'm Grace 👋🏽</h3>
+        <p>I love making things simple, easy and BEAUTIFUL.</p>
+        <p>
+          Having worked in marketing for a number of years, I know that the
+          website is the heart of a business. During this pandemic, your website
+          is even more crucial. As personal interactions are limited, your
+          digital presence needs to breathe who you are and effectively guide
+          your customers to you.
+        </p>
+        <p>
+          I value every project that I undertake and will always make sure that
+          I understand your unique needs and provide seamless solutions for your
+          specific circumstances. Like my web designs, I'm very responsive and
+          will do my best to make the project as enjoyable as possible.
+        </p>
+        <img src="images/grace.jpg" class="avatar" />
+
+        <p>
+          I love working with people, especially small businesses and will do my
+          best to make your dream website a reality.
+        </p>
+        <p>Let’s chat!</p>
+        <p>Grace x</p>
+      </section>
+
+      <!-- Services -->
       <section></section>
 
-      <!-- values -->
-      <section></section>
+      <!-- Values -->
+      <section>
+        <h3>We value ...</h3>
+        <div class="value-svg-container">
+          <img src="images/grace.jpg" class="value-svg" />
+          <img src="images/grace.jpg" class="value-svg" />
+          <img src="images/grace.jpg" class="value-svg" />
+        </div>
+        <div class="value-container">
+          <p class="value">Creativity</p>
+          <p class="value">Human Centered Design</p>
+          <p class="value">Empathy</p>
+        </div>
+      </section>
 
-      <!-- services -->
-      <section></section>
+      <!-- Portfolio Gallery Snippet -->
+      <section>
+        <h3>Check out our work</h3>
+        <!-- JS powered gallery flexbox thing goes here -->
+        <div class="portfolio-container">
+          <img src="images/project-1.png" class="portfolio" />
+          <img src="images/project-2.png" class="portfolio" />
+          <img src="images/project-3.png" class="portfolio" />
+          <img src="images/project-4.png" class="portfolio" />
+        </div>
+      </section>
 
-      <!-- a bit about me -->
-      <section></section>
+      <!-- Keen to Chat link to modal -->
+      <button
+        id="cta"
+        type="button"
+        class="btn btn-primary"
+        data-toggle="modal"
+        data-target="#modal"
+        data-whatever="@mdo"
+      >
+        Keen to Chat?
+      </button>
+      <!-- Modal -->
+      <!-- When adding JS, Add .active to items in the dropdown to style them as active. (So visitor knows they chose it)
+
+ -->
+      <div
+        class="modal fade"
+        id="modal"
+        tabindex="-1"
+        role="dialog"
+        aria-labelledby="modalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="modalLabel">
+                You're getting closer to your dream website!
+              </h5>
+              <button
+                type="button"
+                class="close"
+                data-dismiss="modal"
+                aria-label="Close"
+              >
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+            <p>I'm interested in:</p>
+            <button>Branding</button>
+            <button>Web Design</button>
+            <button>Both</button>
+            <button>Other</button>
+
+            <div class="modal-body">
+              <form>
+                <div class="form-group">
+                  <label for="recipient-name" class="col-form-label"
+                    >Your name:
+                  </label>
+                  <input type="text" class="form-control" id="recipient-name" />
+                </div>
+                <div class="form-group">
+                  <label for="recipient-email" class="col-form-label"
+                    >Email Address:
+                  </label>
+                  <input
+                    type="email"
+                    class="form-control"
+                    id="recipient-email"
+                  />
+                </div>
+
+                <div class="form-group">
+                  <label for="message-text" class="col-form-label"
+                    >What would you like to chat about:</label
+                  >
+                  <textarea class="form-control" id="message-text"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="contact-options" class="col-form-label"
+                    >How would you like to be contacted?</label
+                  >
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-danger dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Action
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Email</a>
+                      <a class="dropdown-item" href="#">Text Message</a>
+                      <a class="dropdown-item" href="#">Phone Call</a>
+                      <div class="dropdown-divider"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label for="recipient-number" class="col-form-label"
+                    >Mobile Number:
+                  </label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="recipient-number"
+                  />
+                </div>
+                <div class="form-group">
+                  <label for="contact-options" class="col-form-label"
+                    >How did you hear about us?</label
+                  >
+                  <div class="btn-group">
+                    <button
+                      type="button"
+                      class="btn btn-danger dropdown-toggle"
+                      data-toggle="dropdown"
+                      aria-haspopup="true"
+                      aria-expanded="false"
+                    >
+                      Action
+                    </button>
+                    <div class="dropdown-menu">
+                      <a class="dropdown-item" href="#">Recommendation</a>
+                      <a class="dropdown-item" href="#"
+                        >Search Enging (e.g. Google)</a
+                      >
+                      <a class="dropdown-item" href="#">Facebook</a>
+                      <a class="dropdown-item" href="#">LinkedIn</a>
+
+                      <div class="dropdown-divider"></div>
+                    </div>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-dismiss="modal"
+              >
+                Close
+              </button>
+              <button type="button" class="btn btn-primary">
+                Send message
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
     </main>
+    <script
+      src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+      integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+      integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+      integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
+      crossorigin="anonymous"
+    ></script>
     <script src="main.js"></script>
   </body>
 </html>

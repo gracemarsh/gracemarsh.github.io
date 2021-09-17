@@ -16,21 +16,34 @@ Use SVG images for contact information icons.
   --main-col-yellow: #f5af00;
   --sec-col-green: #76704c;
   --sec-col-dark: #3f4634;
-  --body-col: #131b0d;
+  --body-col: #1f2d16;
   --tert-col: #474747;
-  --tert-col: light #d5d8d5;
+  --col-light: #d5d8d5;
 }
 /* to use the variables write ->  var(--main-col-red) */
 
 /* -- FONTS ------------------------------------------------- */
 body {
   color: var(--body-col);
+  margin: 3rem;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+h1 {
+  font-size: 4rem;
+}
+
+h3 {
+  margin-top: 3rem;
 }
 /* -- TYPEWRITING ADVERT ------------------------------------------------- */
-.advert {
-  display: flex;
-  color: var(--body-col);
-  background-color: lavenderblush;
+.advert-container {
+  display: none;
 }
 .typing {
   position: relative;
@@ -55,12 +68,77 @@ body {
 }
 
 /* -- IMAGE STYLES ------------------------------------------------- */
+.avatar {
+  width: 10rem;
+  border-radius: 50%;
+  float: right;
+  margin: 1rem;
+}
 
+.value-svg {
+  width: 10rem;
+  border-radius: 50%;
+  float: right;
+  margin: 1rem;
+}
+
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.portfolio {
+  width: 25rem;
+  margin-top: 5rem;
+  border: 1px solid var(--sec-col-dark);
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+/* -- VALUES STYLING ------------------------------------------------- */
+.value {
+  display: flex;
+  justify-content: center;
+  width: 10rem;
+  text-align: center;
+}
 /* -- GALLERY STYLING ------------------------------------------------- */
 
+/* -- CTA - Keen to Chat button ------------------------------------------------- */
+#cta {
+  width: 100%;
+  margin: 5rem auto;
+}
 /* -- TABLET ------------------------------------------------- */
 @media (min-width: 768px) {
+  .advert-container {
+    display: block;
+  }
+
+  .advert {
+    display: flex;
+    align-items: center;
+    color: white;
+    height: 6rem;
+    background-color: var(--main-col-orange);
+    margin-bottom: 1.5rem;
+    padding: 1rem;
+  }
+}
+
+.value-svg-container,
+.value-container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+.value-svg {
+  display: flex;
 }
 /* -- DESKTOP ------------------------------------------------- */
 @media (min-width: 1024px) {
+  body {
+    max-width: 800px;
+    margin: auto;
+  }
 }
