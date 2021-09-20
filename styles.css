@@ -8,24 +8,27 @@ Use SVG images for contact information icons.
 * {
   box-sizing: border-box;
 }
+main {
+  margin: 3rem;
+}
 
 /* -- VARIABLES ------------------------------------------------- */
 :root {
-  --main-col-red: #a33100;
-  --main-col-orange: #c5591b;
-  --main-col-yellow: #f5af00;
-  --sec-col-green: #76704c;
-  --sec-col-dark: #3f4634;
+  --main-red: #a33100;
+  --main-orange: #c5591b;
+  --main-yellow: #f5af00;
+  --sec-green: #76704c;
+  --sec-dark: #3f4634;
   --body-col: #1f2d16;
   --tert-col: #474747;
   --col-light: #d5d8d5;
 }
-/* to use the variables write ->  var(--main-col-red) */
+/* to use the variables write ->  var(--main-red) */
 
 /* -- FONTS ------------------------------------------------- */
 body {
   color: var(--body-col);
-  margin: 3rem;
+  margin: 0;
 }
 
 h1,
@@ -41,6 +44,42 @@ h1 {
 h3 {
   margin-top: 3rem;
 }
+.contact-text {
+  text-align: center;
+}
+/* -- NAV ------------------------------------------------- */
+nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 0;
+}
+nav a {
+  text-decoration: none;
+  color: white;
+  height: 45px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-grow: 1;
+}
+
+#nav-logo {
+  display: none;
+}
+#nav-home {
+  background-color: var(--main-red);
+}
+#nav-about {
+  background-color: var(--main-orange);
+}
+#nav-portfolio {
+  background-color: var(--main-yellow);
+}
+#nav-contact {
+  background-color: var(--sec-dark);
+}
+
 /* -- TYPEWRITING ADVERT ------------------------------------------------- */
 .advert-container {
   display: none;
@@ -67,45 +106,60 @@ h3 {
   }
 }
 
-/* -- IMAGE STYLES ------------------------------------------------- */
+/* -- IMAGES ------------------------------------------------- */
 .avatar {
   width: 10rem;
   border-radius: 50%;
   float: right;
   margin: 1rem;
 }
-
+.values-container {
+  display: flex;
+  flex-direction: column;
+}
 .value-svg {
-  width: 10rem;
+  width: 14rem;
   border-radius: 50%;
-  float: right;
   margin: 1rem;
 }
 
-.portfolio-container {
+/* -- VALUES ------------------------------------------------- */
+#values {
+  margin-top: 3rem;
+}
+.values-container {
+  display: flex;
+}
+.value-card {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
-.portfolio {
-  width: 25rem;
-  margin-top: 5rem;
-  border: 1px solid var(--sec-col-dark);
-  border-radius: 1rem;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
-}
-/* -- VALUES STYLING ------------------------------------------------- */
 .value {
-  display: flex;
-  justify-content: center;
+  /* justify-content: center; */
   width: 10rem;
   text-align: center;
 }
-/* -- GALLERY STYLING ------------------------------------------------- */
+
+/* -- PORTFOLIO ------------------------------------------------- */
+.portfolio-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+.portfolio {
+  width: 25rem;
+  margin-top: 5rem;
+  border: 1px solid var(--sec-dark);
+  border-radius: 1rem;
+  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
 
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
 #cta {
   width: 100%;
+  height: 5rem;
   margin: 5rem auto;
 }
 /* -- TABLET ------------------------------------------------- */
@@ -119,26 +173,53 @@ h3 {
     align-items: center;
     color: white;
     height: 6rem;
-    background-color: var(--main-col-orange);
+    background-color: var(--main-orange);
     margin-bottom: 1.5rem;
     padding: 1rem;
   }
-}
+  /* -- TABLET - NAV ------------------------------------------------- */
 
-.value-svg-container,
-.value-container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+  #nav-home {
+    flex-grow: 2;
+  }
 
-.value-svg {
-  display: flex;
+  /* -- TABLET - VALUES ------------------------------------------------- */
+  .values-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  }
+
+  .value-svg {
+    display: flex;
+  }
+
+  /* -- TABLET - PORTFOLIO ------------------------------------------------- */
+  .portfolio-container {
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+  .portfolio {
+    width: 350px;
+    height: 300px;
+    margin: 15px;
+  }
 }
 /* -- DESKTOP ------------------------------------------------- */
 @media (min-width: 1024px) {
   body {
-    max-width: 800px;
+  }
+  header,
+  main {
+    max-width: 1000px;
     margin: auto;
+  }
+
+  /* -- DESKTOP - PORTFOLIO ------------------------------------------------- */
+
+  .portfolio {
+    width: 29rem;
+    height: 350px;
   }
 }
