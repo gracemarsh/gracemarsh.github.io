@@ -19,7 +19,7 @@
   <body>
     <nav>
       <a id="nav-logo">Grace Marsh Web Solutions</a>
-      <a id="nav-home" href="home.html">Home</a>
+      <a id="nav-home" href="index.html">Home</a>
       <a id="nav-about" href="about.html">About Me</a>
       <a id="nav-portfolio" href="portfolio.html">Portfolio</a>
       <a id="nav-contact" href="contact.html">Let's Chat</a>
@@ -40,36 +40,42 @@
 
       <section id="form">
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label"
-            >Your Name</label
-          >
+          <label for="form-name" class="form-label">Your Name *</label>
           <input
             type="text"
             class="form-control"
-            id="exampleFormControlInput1"
-            placeholder=""
+            id="form-name"
+            placeholder="Willem Dafriend"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlInput1" class="form-label"
-            >Email address</label
-          >
+          <label for="form-email" class="form-label">Email address *</label>
           <input
             type="email"
             class="form-control"
-            id="exampleFormControlInput1"
-            placeholder="name@example.com"
+            id="form-email"
+            placeholder="willdafriend@example.com"
           />
         </div>
         <div class="mb-3">
-          <label for="exampleFormControlTextarea1" class="form-label"
+          <label for="form-textarea" class="form-label"
             >How can we help you?</label
           >
           <textarea
             class="form-control"
-            id="exampleFormControlTextarea1"
+            id="form-textarea"
             rows="3"
+            placeholder="Hi Grace, I desperately want to make my website load faster and get more customers."
           ></textarea>
+        </div>
+        <div class="mb-3">
+          <label for="form-mobile" class="form-label">Mobile Number </label>
+          <input
+            type="text"
+            class="form-control"
+            id="form-mobile"
+            placeholder="0449 588 524"
+          />
         </div>
       </section>
     </main>

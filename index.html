@@ -19,7 +19,7 @@
   <body>
     <nav>
       <a id="nav-logo">Grace Notes Web Solutions</a>
-      <a id="nav-home" href="home.html">Home</a>
+      <a id="nav-home" href="index.html">Home</a>
       <a id="nav-about" href="about.html">About Me</a>
       <a id="nav-portfolio" href="portfolio.html">Portfolio</a>
       <a id="nav-contact" href="contact.html">Let's Chat</a>
@@ -114,9 +114,7 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalLabel">
-                You're getting closer to your dream website!
-              </h5>
+              <h5 class="modal-title" id="modalLabel">Let's get in touch :)</h5>
               <button
                 type="button"
                 class="close"
@@ -133,7 +131,12 @@
                   <label for="recipient-name" class="col-form-label"
                     >Your name:
                   </label>
-                  <input type="text" class="form-control" id="recipient-name" />
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="recipient-name"
+                    placeholder="Willem Dafriend"
+                  />
                 </div>
                 <div class="form-group">
                   <label for="recipient-email" class="col-form-label"
@@ -143,6 +146,7 @@
                     type="email"
                     class="form-control"
                     id="recipient-email"
+                    placeholder="willdafriend@example.com"
                   />
                 </div>
 
@@ -150,29 +154,11 @@
                   <label for="message-text" class="col-form-label"
                     >What would you like to chat about:</label
                   >
-                  <textarea class="form-control" id="message-text"></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="contact-options" class="col-form-label"
-                    >How would you like to be contacted?</label
-                  >
-                  <div class="btn-group">
-                    <button
-                      type="button"
-                      class="btn btn-danger dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Action
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Email</a>
-                      <a class="dropdown-item" href="#">Text Message</a>
-                      <a class="dropdown-item" href="#">Phone Call</a>
-                      <div class="dropdown-divider"></div>
-                    </div>
-                  </div>
+                  <textarea
+                    class="form-control"
+                    id="message-text"
+                    placeholder="Hi Grace, I desperately want to make my website load faster and get more customers."
+                  ></textarea>
                 </div>
                 <div class="form-group">
                   <label for="recipient-number" class="col-form-label"
@@ -182,33 +168,8 @@
                     type="text"
                     class="form-control"
                     id="recipient-number"
+                    placeholder="0449 588 524"
                   />
-                </div>
-                <div class="form-group">
-                  <label for="contact-options" class="col-form-label"
-                    >How did you hear about us?</label
-                  >
-                  <div class="btn-group">
-                    <button
-                      type="button"
-                      class="btn btn-danger dropdown-toggle"
-                      data-toggle="dropdown"
-                      aria-haspopup="true"
-                      aria-expanded="false"
-                    >
-                      Action
-                    </button>
-                    <div class="dropdown-menu">
-                      <a class="dropdown-item" href="#">Recommendation</a>
-                      <a class="dropdown-item" href="#"
-                        >Search Enging (e.g. Google)</a
-                      >
-                      <a class="dropdown-item" href="#">Facebook</a>
-                      <a class="dropdown-item" href="#">LinkedIn</a>
-
-                      <div class="dropdown-divider"></div>
-                    </div>
-                  </div>
                 </div>
               </form>
             </div>
