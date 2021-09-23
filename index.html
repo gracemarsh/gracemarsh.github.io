@@ -18,11 +18,11 @@
   </head>
   <body>
     <nav>
-      <a id="nav-logo">Grace Notes Web Solutions</a>
-      <a id="nav-home" href="index.html">Home</a>
-      <a id="nav-about" href="about.html">About Me</a>
-      <a id="nav-portfolio" href="portfolio.html">Portfolio</a>
-      <a id="nav-contact" href="contact.html">Let's Chat</a>
+      <a id="nav-logo" class="nav-link">Grace Notes Web Solutions</a>
+      <a id="nav-home" class="nav-link" href="index.html">Home</a>
+      <a id="nav-about" class="nav-link" href="about.html">About Me</a>
+      <a id="nav-portfolio" class="nav-link" href="portfolio.html">Portfolio</a>
+      <a id="nav-contact" class="nav-link" href="contact.html">Let's Chat</a>
     </nav>
     <header>
       <h1>Grace Notes</h1>
@@ -100,9 +100,7 @@
         Keen to Chat?
       </button>
       <!-- Modal -->
-      <!-- When adding JS, Add .active to items in the dropdown to style them as active. (So visitor knows they chose it)
 
- -->
       <div
         class="modal fade"
         id="modal"
@@ -114,7 +112,6 @@
         <div class="modal-dialog" role="document">
           <div class="modal-content">
             <div class="modal-header">
-              <h5 class="modal-title" id="modalLabel">Let's get in touch :)</h5>
               <button
                 type="button"
                 class="close"
@@ -127,68 +124,41 @@
 
             <div class="modal-body">
               <form>
-                <div class="form-group">
-                  <label for="recipient-name" class="col-form-label"
-                    >Your name:
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="recipient-name"
-                    placeholder="Willem Dafriend"
-                  />
-                </div>
-                <div class="form-group">
-                  <label for="recipient-email" class="col-form-label"
-                    >Email Address:
-                  </label>
-                  <input
-                    type="email"
-                    class="form-control"
-                    id="recipient-email"
-                    placeholder="willdafriend@example.com"
-                  />
-                </div>
-
-                <div class="form-group">
-                  <label for="message-text" class="col-form-label"
-                    >What would you like to chat about:</label
-                  >
-                  <textarea
-                    class="form-control"
-                    id="message-text"
-                    placeholder="Hi Grace, I desperately want to make my website load faster and get more customers."
-                  ></textarea>
-                </div>
-                <div class="form-group">
-                  <label for="recipient-number" class="col-form-label"
-                    >Mobile Number:
-                  </label>
-                  <input
-                    type="text"
-                    class="form-control"
-                    id="recipient-number"
-                    placeholder="0449 588 524"
-                  />
-                </div>
-              </form>
-            </div>
-            <div class="modal-footer">
-              <button
-                type="button"
-                class="btn btn-secondary"
-                data-dismiss="modal"
-              >
-                Close
-              </button>
-              <button type="button" class="btn btn-primary">
-                Send message
-              </button>
+                <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSeaCAsYnV6-9cKwtDTPS6pV9oujDO0ewtwPcgQ8nu4WgYTDKg/viewform?embedded=true" width="100%" height="1007" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
             </div>
           </div>
         </div>
       </div>
     </main>
+    <footer>
+      <section class="footer-container">
+      <h2>Coffee's on us!</h2>
+      <p>We're based in the wonderful city of Melbourne, Australia and would love to chat in person! </p>
+      <section id="footer-links">
+        <a>Contact us</a>
+        <a>About Me</a>
+        <a>Our Work</a>
+      </section>
+      <section id="footer-icons">
+
+          <a>
+            <g>
+              <p>Github</p>
+            </g>
+          </a>
+          <a>
+            <g>
+              <p>LinkedIn</p>
+            </g>
+          </a>
+          <a>
+            <g>
+              <p>Twitter</p>
+            </g>
+          </a>
+      </section>
+    </section>
+    </footer>
     <script
       src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
       integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
