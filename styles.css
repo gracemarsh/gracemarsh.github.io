@@ -12,6 +12,10 @@ main {
   margin: 3rem;
 }
 
+main section {
+  margin: 10rem 0;
+}
+
 /* -- VARIABLES ------------------------------------------------- */
 :root {
   --main-red: #a33100;
@@ -27,32 +31,30 @@ main {
 
 /* -- FONTS ------------------------------------------------- */
 body {
+  font-family: "Poppins", sans-serif;
   color: var(--body-col);
   margin: 0;
-}
-
-h1,
-h2,
-h3 {
-  margin: 3rem 0;
   text-align: center;
 }
+
 h1 {
   font-size: 4rem;
 }
-
-h3 {
-  margin-top: 3rem;
+h1,
+h2 {
+  font-family: "Scheherazade New", serif;
+  margin: 0;
 }
+
 .contact-text {
   text-align: center;
 }
 /* -- NAV ------------------------------------------------- */
 nav {
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
-  margin: 0 0 8rem 0;
+  margin: 0;
 }
 nav a {
   text-decoration: none;
@@ -84,6 +86,17 @@ nav a {
   background-color: var(--sec-dark);
 }
 /* -- HEADER ------------------------------------------------- */
+header {
+  min-height: 20vh;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  position: relative;
+}
+#index-header {
+  height: 100vh;
+}
 
 /* -- TYPEWRITING ADVERT ------------------------------------------------- */
 .advert-container {
@@ -128,6 +141,8 @@ nav a {
   margin: 1rem;
 }
 
+svg {
+}
 /* -- VALUES ------------------------------------------------- */
 #values {
   margin-top: 3rem;
@@ -150,15 +165,35 @@ nav a {
 .portfolio-container {
   display: flex;
   flex-direction: column;
+  flex-wrap: wrap;
   align-items: center;
   width: 100%;
 }
-.portfolio {
+.card {
+  margin: 1rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  border-radius: 0.5rem;
+  overflow: hidden;
+  transition: all 0.2s ease;
+  aspect-ratio: 16/9;
   width: 25rem;
-  margin-top: 5rem;
-  border: 1px solid var(--sec-dark);
-  border-radius: 1rem;
-  box-shadow: 0 3px 10px rgb(0 0 0 / 0.2);
+}
+
+.portfolio-img {
+  /* width: 25rem;
+  margin: 0;
+  border-radius: 1rem; */
+  transition: all 5s ease-out;
+  /* transform-origin: 50% 50%; */
+}
+
+.card:hover {
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+}
+
+/* image needs to zoom when parent card is hovered */
+.card:hover > .portfolio-img {
+  transform: scale(1.1);
 }
 
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
@@ -175,14 +210,17 @@ footer {
   background-color: var(--sec-dark);
   color: white;
   text-align: center;
-  padding: 3rem 0;
+  padding: 4rem 0;
+}
+#footer-heading {
+  padding-bottom: 3rem;
 }
 #footer-links,
 #footer-icons {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  padding: 3rem 0;
+  padding: 1.5rem 0;
 }
 #footer-icons {
   justify-content: center;
@@ -207,7 +245,9 @@ footer {
     padding: 1rem;
   }
   /* -- TABLET - NAV ------------------------------------------------- */
-
+  nav {
+    flex-direction: row;
+  }
   /* -- TABLET - VALUES ------------------------------------------------- */
   .values-container {
     display: flex;
@@ -222,25 +262,27 @@ footer {
   /* -- TABLET - PORTFOLIO ------------------------------------------------- */
   .portfolio-container {
     flex-direction: row;
-    flex-wrap: wrap;
     justify-content: center;
   }
   .portfolio {
     width: 350px;
     height: 300px;
-    margin: 15px;
+    /* margin: 15px; */
   }
   /* -- TABLET - CTA ------------------------------------------------- */
 
   #cta {
     font-size: 40px;
   }
+  .btn-primary {
+    border: none;
+    background-color: none;
+  }
 }
 /* -- DESKTOP ------------------------------------------------- */
 @media (min-width: 1024px) {
   body {
   }
-  header,
   main,
   .footer-container {
     max-width: 1000px;
