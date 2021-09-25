@@ -154,6 +154,8 @@ svg {
   display: flex;
   flex-direction: column;
   align-items: center;
+  width: 200px;
+  height: 200px;
 }
 .value {
   /* justify-content: center; */
@@ -215,8 +217,9 @@ footer {
 #footer-heading {
   padding-bottom: 3rem;
 }
-#footer-links {
+#footer-links a {
   text-decoration: underline;
+  color: white;
 }
 #footer-links,
 #footer-icons {
