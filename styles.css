@@ -215,6 +215,9 @@ footer {
 #footer-heading {
   padding-bottom: 3rem;
 }
+#footer-links {
+  text-decoration: underline;
+}
 #footer-links,
 #footer-icons {
   display: flex;
@@ -228,6 +231,11 @@ footer {
 #footer-icons a {
   display: flex;
   flex-direction: row;
+}
+.socials-icon {
+  height: 70px;
+  width: 70px;
+  padding: 0 10px;
 }
 /* -- TABLET ------------------------------------------------- */
 @media (min-width: 768px) {
