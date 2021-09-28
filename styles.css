@@ -13,7 +13,7 @@ main {
 }
 
 main section {
-  margin: 10rem 0;
+  margin: 8rem 0;
 }
 
 /* -- VARIABLES ------------------------------------------------- */
@@ -44,6 +44,12 @@ h1,
 h2 {
   font-family: "Scheherazade New", serif;
   margin: 0;
+}
+
+h1,
+h2,
+h3 {
+  margin-bottom: 3.5rem;
 }
 
 .contact-text {
@@ -85,43 +91,30 @@ nav a {
 #nav-contact {
   background-color: var(--sec-dark);
 }
+
+.active {
+  color: red;
+  text-decoration: underline;ß
+}
 /* -- HEADER ------------------------------------------------- */
 header {
   min-height: 20vh;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
   position: relative;
+  transition: all 2000ms ease-out;
 }
-#index-header {
+.index-header {
   height: 100vh;
 }
 
+.scrolled {
+  height: 25vh;
+}
 /* -- TYPEWRITING ADVERT ------------------------------------------------- */
 .advert-container {
   display: none;
-}
-.typing {
-  position: relative;
-  margin-left: 10px;
-}
-.typing:after {
-  content: "";
-  position: absolute;
-  right: -5px;
-  width: 1px;
-  height: 100%;
-  border-right: 2px solid black;
-  animation: blink 0.7s infinite ease;
-}
-@keyframes blink {
-  0% {
-    opacity: 0;
-  }
-  100% {
-    opacity: 1;
-  }
 }
 
 /* -- IMAGES ------------------------------------------------- */
@@ -135,13 +128,14 @@ header {
   display: flex;
   flex-direction: column;
 }
-.value-svg {
+/* .value-svg {
   width: 14rem;
   border-radius: 50%;
   margin: 1rem;
-}
+} */
 
 svg {
+  width: 100%;
 }
 /* -- VALUES ------------------------------------------------- */
 #values {
@@ -155,14 +149,25 @@ svg {
   flex-direction: column;
   align-items: center;
   width: 200px;
-  height: 200px;
+
+  justify-content: flex-start;
 }
 .value {
-  /* justify-content: center; */
   width: 10rem;
   text-align: center;
+  padding: 1rem 0;
+  margin: 0;
 }
 
+.creativity-svg {
+  height: 162px;
+}
+.human-svg {
+  height: 175px;
+}
+.empathy-svg {
+  height: 165px;
+}
 /* -- PORTFOLIO ------------------------------------------------- */
 .portfolio-container {
   display: flex;
@@ -214,9 +219,7 @@ footer {
   text-align: center;
   padding: 4rem 0;
 }
-#footer-heading {
-  padding-bottom: 3rem;
-}
+
 #footer-links a {
   text-decoration: underline;
   color: white;
@@ -246,19 +249,54 @@ footer {
     display: block;
   }
 
-  .advert {
-    display: flex;
-    align-items: center;
-    color: white;
-    height: 6rem;
-    background-color: var(--main-orange);
-    margin-bottom: 1.5rem;
-    padding: 1rem;
-  }
   /* -- TABLET - NAV ------------------------------------------------- */
   nav {
     flex-direction: row;
   }
+  /* -- TABLET - ADVERT ------------------------------------------------- */
+  .pre-advert {
+    font-size: 20px;
+    font-style: italic;
+    display: flex;
+    color: white;
+    background-color: var(--main-red);
+    margin: 0;
+    padding: 1rem;
+  }
+
+  .advert {
+    display: flex;
+    color: white;
+    background-color: var(--main-orange);
+    padding: 1rem;
+  }
+
+  .advert {
+    font-size: 30px;
+  }
+  .typing {
+    position: relative;
+    margin-left: 10px;
+  }
+  .typing:after {
+    content: "";
+    position: absolute;
+    right: -5px;
+    width: 1px;
+    height: 100%;
+    border-right: 2px solid black;
+    animation: blink 0.7s infinite ease;
+    margin: 0;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+
   /* -- TABLET - VALUES ------------------------------------------------- */
   .values-container {
     display: flex;
@@ -298,6 +336,12 @@ footer {
   .footer-container {
     max-width: 1000px;
     margin: auto;
+  }
+
+  nav {
+    position: sticky;
+    top: 0;
+    z-index: 1;
   }
 
   /* -- DESKTOP - PORTFOLIO ------------------------------------------------- */

@@ -1,5 +1,23 @@
 // Need Multiple JavaScript interactions.
 
+// MINIMISE HOME PAGE HEADER
+
+function headerMinimise() {
+  if (window.pageYOffset > 1000) {
+    document.querySelector("header").classList.add("scrolled");
+  }
+}
+
+window.addEventListener("scroll", headerMinimise);
+
+// SHOW ACTIVE NAV TAB
+
+let navLink = document.querySelectorAll(".nav-link");
+
+function activeNabTab() {}
+
+window.addEventListener("click", activeNabTab);
+
 // TYPEWRITING ADVERT
 
 const texts = [
