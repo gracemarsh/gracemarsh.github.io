@@ -12,11 +12,28 @@ window.addEventListener("scroll", headerMinimise);
 
 // SHOW ACTIVE NAV TAB
 
-let navLink = document.querySelectorAll(".nav-link");
+let navLinks = document.querySelectorAll(".nav-link");
 
-function activeNabTab() {}
+let activeNavTab = function (navLink) {
+  navLink.classList.add("active");
+};
 
-window.addEventListener("click", activeNabTab);
+const paths = ["index", "about", "portfolio", "contact"];
+const currentPathUrl = window.location.pathname.split("/").slice(-1); // 'index.html'
+const isPageActive = paths.map((path) =>
+  currentPathUrl.some((x) => x.includes(path))
+);
+const activeIndex = isPageActive.indexOf(true);
+navLinks[activeIndex].classList.add("active");
+
+window.location.pathname
+  .split("/")
+  .slice(-1)
+  .some((x) => x.includes("portfolio"));
+
+for (let i = 0; i < navLinks.length; i++) {
+  navLinks[i].addEventListener("click", activeNavTab);
+}
 
 // TYPEWRITING ADVERT
 
@@ -37,6 +54,9 @@ let currentText = "";
 let letter = "";
 
 (function type() {
+  if (document.querySelector(".typing")) {
+    return;
+  }
   if (count === texts.length) {
     count = 0;
   }

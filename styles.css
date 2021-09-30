@@ -8,6 +8,10 @@ Use SVG images for contact information icons.
 * {
   box-sizing: border-box;
 }
+body{
+  position: relative;
+  /* height: 100%; */
+}
 main {
   margin: 3rem;
 }
@@ -55,6 +59,45 @@ h3 {
 .contact-text {
   text-align: center;
 }
+
+/* -- BACKGROUND GRADIENT ------------------------------------------------- */
+.background{
+  display: flex;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  align-items: stretch;
+  justify-content: space-evenly;
+  z-index:-1;
+  opacity: 0.7;
+}
+
+.background > div{
+  flex-grow: 1;
+}
+.col-a {
+  background-image:
+    linear-gradient(var(--main-red), #ffffff);
+}
+.col-b {
+  background-image:
+    linear-gradient(var(--main-orange), #ffffff);
+}
+.col-c {
+  background-image:
+    linear-gradient(var(--main-yellow), #ffffff);
+}
+
+.col-d {
+  background-image:
+    linear-gradient(var(--sec-dark), #ffffff);
+}
+
+/* -- BACKGROUND CARD ------------------------------------------------- */
+
+.back-card{
+  background-color: white;
+}
 /* -- NAV ------------------------------------------------- */
 nav {
   display: flex;
@@ -69,7 +112,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
+  width: 25%;
 }
 .nav-link:hover {
   text-decoration: none;
@@ -213,6 +256,9 @@ svg {
   font-size: 25px;
 }
 /* -- FOOTER ------------------------------------------------- */
+.index-footer{
+  background-color: white}
+
 footer {
   background-color: var(--sec-dark);
   color: white;
