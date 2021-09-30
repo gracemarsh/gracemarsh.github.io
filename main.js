@@ -2,13 +2,13 @@
 
 // MINIMISE HOME PAGE HEADER
 
-function headerMinimise() {
-  if (window.pageYOffset > 1000) {
-    document.querySelector("header").classList.add("scrolled");
-  }
-}
+// function headerMinimise() {
+//   if (window.pageYOffset > 1000) {
+//     document.querySelector("header").classList.add("scrolled");
+//   }
+// }
 
-window.addEventListener("scroll", headerMinimise);
+// window.addEventListener("scroll", headerMinimise);
 
 // SHOW ACTIVE NAV TAB
 

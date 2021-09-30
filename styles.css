@@ -8,7 +8,7 @@ Use SVG images for contact information icons.
 * {
   box-sizing: border-box;
 }
-body{
+body {
   position: relative;
   /* height: 100%; */
 }
@@ -41,6 +41,14 @@ body {
   text-align: center;
 }
 
+.index-header h1 {
+  font-size: 6rem;
+}
+.index-header h1,
+.index-header h2 {
+  color: #1f2d16;
+}
+
 h1 {
   font-size: 4rem;
 }
@@ -61,42 +69,42 @@ h3 {
 }
 
 /* -- BACKGROUND GRADIENT ------------------------------------------------- */
-.background{
+.background {
   display: flex;
   position: absolute;
   height: 100%;
   width: 100%;
   align-items: stretch;
   justify-content: space-evenly;
-  z-index:-1;
-  opacity: 0.7;
+  z-index: -1;
+  opacity: 0.2;
+  filter: blur(1.5px);
 }
 
-.background > div{
+.background > div {
   flex-grow: 1;
 }
 .col-a {
-  background-image:
-    linear-gradient(var(--main-red), #ffffff);
+  background-image: linear-gradient(var(--main-red), #ffffff);
 }
 .col-b {
-  background-image:
-    linear-gradient(var(--main-orange), #ffffff);
+  background-image: linear-gradient(var(--main-orange), #ffffff);
 }
 .col-c {
-  background-image:
-    linear-gradient(var(--main-yellow), #ffffff);
+  background-image: linear-gradient(var(--main-yellow), #ffffff);
 }
 
 .col-d {
-  background-image:
-    linear-gradient(var(--sec-dark), #ffffff);
+  background-image: linear-gradient(var(--sec-dark), #ffffff);
 }
 
 /* -- BACKGROUND CARD ------------------------------------------------- */
 
-.back-card{
+.back-card {
   background-color: white;
+  padding: 2.5rem;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  border-radius: 0.5rem;
 }
 /* -- NAV ------------------------------------------------- */
 nav {
@@ -112,7 +120,7 @@ nav a {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 25%;
+  flex-grow: 1;
 }
 .nav-link:hover {
   text-decoration: none;
@@ -137,7 +145,7 @@ nav a {
 
 .active {
   color: red;
-  text-decoration: underline;ß
+  text-decoration: underline;
 }
 /* -- HEADER ------------------------------------------------- */
 header {
@@ -146,10 +154,10 @@ header {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  transition: all 2000ms ease-out;
+  /* transition: all 2000ms ease-out; */
 }
 .index-header {
-  height: 100vh;
+  height: 60vh;
 }
 
 .scrolled {
@@ -167,32 +175,24 @@ header {
   float: right;
   margin: 1rem;
 }
-.values-container {
-  display: flex;
-  flex-direction: column;
-}
-/* .value-svg {
-  width: 14rem;
-  border-radius: 50%;
-  margin: 1rem;
-} */
-
 svg {
   width: 100%;
 }
 /* -- VALUES ------------------------------------------------- */
-#values {
-  margin-top: 3rem;
-}
 .values-container {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+#values {
+  margin-top: 3rem;
 }
 .value-card {
   display: flex;
   flex-direction: column;
   align-items: center;
   width: 200px;
-
   justify-content: flex-start;
 }
 .value {
@@ -220,7 +220,7 @@ svg {
   width: 100%;
 }
 .card {
-  margin: 1rem;
+  margin: 1rem 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0);
   border-radius: 0.5rem;
   overflow: hidden;
@@ -249,15 +249,19 @@ svg {
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
 #cta {
   display: block;
-  width: 50%;
+  width: 75%;
   height: 5rem;
   margin: 5rem auto;
   background-color: var(--main-orange);
   font-size: 25px;
 }
+#cta:active {
+  border: none;
+}
 /* -- FOOTER ------------------------------------------------- */
-.index-footer{
-  background-color: white}
+.index-footer {
+  background-color: white;
+}
 
 footer {
   background-color: var(--sec-dark);
@@ -295,9 +299,25 @@ footer {
     display: block;
   }
 
+  .background {
+    opacity: 0.8;
+  }
+
+  .index-header h1 {
+    font-size: 6rem;
+    color: white;
+    text-shadow: 0 0 35px #1f2d16;
+  }
+  .index-header h2 {
+    color: white;
+    text-shadow: 0 0 35px #1f2d16;
+  }
   /* -- TABLET - NAV ------------------------------------------------- */
   nav {
     flex-direction: row;
+  }
+  nav a {
+    width: 25%;
   }
   /* -- TABLET - ADVERT ------------------------------------------------- */
   .pre-advert {
@@ -363,6 +383,10 @@ footer {
     width: 350px;
     height: 300px;
     /* margin: 15px; */
+  }
+
+  .card {
+    margin: 2.5rem;
   }
   /* -- TABLET - CTA ------------------------------------------------- */
 
