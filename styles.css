@@ -10,7 +10,6 @@ Use SVG images for contact information icons.
 }
 body {
   position: relative;
-  /* height: 100%; */
 }
 main {
   margin: 3rem;
@@ -290,6 +289,10 @@ footer {
   fill: black;
   stroke: white;
 }
+.top-link {
+  text-align: right;
+  text-decoration: underline;
+}
 /* -- TABLET ------------------------------------------------- */
 @media (min-width: 768px) {
   .advert-container {
@@ -332,9 +335,6 @@ footer {
     color: white;
     background-color: var(--main-orange);
     padding: 1rem;
-  }
-
-  .advert {
     font-size: 30px;
   }
   .typing {
@@ -346,8 +346,8 @@ footer {
     position: absolute;
     right: -5px;
     width: 1px;
-    height: 100%;
-    border-right: 2px solid black;
+    height: 75%;
+    border-right: 3px solid white;
     animation: blink 0.7s infinite ease;
     margin: 0;
   }
