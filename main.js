@@ -59,6 +59,7 @@ let letter = "";
   }
   if (count === texts.length) {
     count = 0;
+    console.log("first step");
   }
   currentText = texts[count];
   letter = currentText.slice(0, ++index);
@@ -69,6 +70,7 @@ let letter = "";
     count++;
     index = 0;
     setTimeout(type, 1500);
+    console.log("it's kind of working");
   } else {
     setTimeout(type, 150);
   }
