@@ -1,9 +1,9 @@
 /* 
 Link to more than 6 projects.
 Use SVG images for contact information icons.
-
-
 */
+
+/* why can't I get   NAV LINKS TO : text-align: center; seems like bootstrap is overriding my css?*/
 /* -- MAIN STYLES ------------------------------------------------- */
 * {
   box-sizing: border-box;
@@ -17,7 +17,7 @@ main {
 }
 
 main section {
-  margin: 8rem 0;
+  margin: 6rem 0;
 }
 
 /* -- VARIABLES ------------------------------------------------- */
@@ -55,7 +55,7 @@ h1 {
 h1,
 h2 {
   font-family: "Scheherazade New", serif;
-  margin: 0;
+  margin: 3.5rem 0;
 }
 
 h1,
@@ -114,13 +114,12 @@ nav {
   margin: 0;
 }
 nav a {
+  display: flex;
   text-decoration: none;
   color: white;
-  height: 45px;
-  display: flex;
+  height: 5rem;
   justify-content: center;
   align-items: center;
-  flex-grow: 1;
 }
 .nav-link:hover {
   text-decoration: none;
@@ -144,11 +143,11 @@ nav a {
 }
 
 .active {
-  color: red;
   text-decoration: underline;
+  font-weight: 600;
 }
 /* -- HEADER ------------------------------------------------- */
-header {
+.index-header {
   min-height: 20vh;
   display: flex;
   flex-direction: column;
@@ -259,22 +258,18 @@ svg {
   border: none;
 }
 /* -- FOOTER ------------------------------------------------- */
-.index-footer {
-  background-color: white;
-}
-
 footer {
   background-color: var(--sec-dark);
   color: white;
   text-align: center;
-  padding: 4rem 0;
+  padding: 1rem 0;
 }
 
-#footer-links a {
+.footer-links a {
   text-decoration: underline;
   color: white;
 }
-#footer-links,
+.footer-links,
 #footer-icons {
   display: flex;
   justify-content: space-around;
@@ -397,6 +392,14 @@ footer {
     border: none;
     background-color: none;
   }
+}
+/* -- TABLET - FOOTER ------------------------------------------------- */
+.index-footer {
+  background-color: white;
+  color: var(--sec-dark);
+}
+.index-footer a {
+  color: var(--sec-dark);
 }
 /* -- DESKTOP ------------------------------------------------- */
 @media (min-width: 1024px) {
