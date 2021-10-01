@@ -18,10 +18,6 @@ main {
 main section {
   margin: 0 0 6rem 0;
 }
-
-.about-container {
-  height: 50vh;
-}
 h1,
 h2,
 h3,
@@ -178,11 +174,9 @@ nav a {
 }
 
 /* -- IMAGES ------------------------------------------------- */
-.avatar {
+#avatar {
   width: 10rem;
   border-radius: 50%;
-  float: right;
-  margin: 1rem;
 }
 svg {
   width: 100%;
@@ -292,9 +286,9 @@ svg {
 }
 
 /* -- ABOUT PAGE ------------------------------------------------- */
-.about-container > p,
+.about-text-container > p,
 .contact-text > p {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
@@ -399,11 +393,11 @@ footer {
   .advert > p {
     padding: 1rem;
   }
-  .typing {
+  #typing {
     position: relative;
     margin-left: 10px;
   }
-  .typing:after {
+  #typing:after {
     content: "";
     position: absolute;
     right: -5px;
@@ -451,10 +445,55 @@ footer {
   /* -- TABLET - ABOUT PAGE ------------------------------------------------- */
   .about-container {
     max-width: 500px;
-    margin: auto;
+    margin: 0 auto 10rem;
   }
-  /* -- TABLET - CTA ------------------------------------------------- */
+  .about-text-container {
+    background-color: white;
+    opacity: 0.8;
+    z-index: 2;
+    position: relative;
+  }
+  .floating-head {
+    width: 150px;
+    height: 150px;
+    position: absolute;
+    top: 5%;
+    left: 0;
+    z-index: 1;
+  }
+  #about-footer {
+    position: relative;
+  }
+  .x {
+    animation: x 13s linear infinite alternate;
+  }
+  .y {
+    animation: y 7s linear infinite alternate;
+  }
 
+  @-webkit-keyframes x {
+    100% {
+      transform: translateX(calc(95vw - 100px));
+    }
+  }
+
+  @keyframes x {
+    100% {
+      transform: translateX(calc(95vw - 100px));
+    }
+  }
+  @-webkit-keyframes y {
+    100% {
+      transform: translateY(calc(60vh - 100px));
+    }
+  }
+  @keyframes y {
+    100% {
+      transform: translateY(calc(60vh - 100px));
+    }
+  }
+
+  /* -- TABLET - CTA ------------------------------------------------- */
   #cta {
     font-size: 40px;
   }

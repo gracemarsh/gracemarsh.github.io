@@ -26,6 +26,7 @@ for (let i = 0; i < navLinks.length; i++) {
 }
 
 // TYPEWRITING ADVERT
+console.log("hello everything is ok");
 
 const texts = [
   "so slow?",
@@ -44,16 +45,17 @@ let currentText = "";
 let letter = "";
 
 (function type() {
-  if (document.querySelector(".typing")) {
+  if (document.querySelector("#typing")) {
     return;
   }
   if (count === texts.length) {
     count = 0;
   }
+
   currentText = texts[count];
   letter = currentText.slice(0, ++index);
 
-  document.querySelector(".typing").textContent = letter;
+  document.querySelector("#typing").textContent = letter;
 
   if (letter.length === currentText.length) {
     count++;
@@ -63,13 +65,3 @@ let letter = "";
     setTimeout(type, 150);
   }
 })();
-
-// MINIMISE HOME PAGE HEADER
-
-// function headerMinimise() {
-//   if (window.pageYOffset > 1000) {
-//     document.querySelector("header").classList.add("scrolled");
-//   }
-// }
-
-// window.addEventListener("scroll", headerMinimise);
