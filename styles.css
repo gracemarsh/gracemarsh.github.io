@@ -128,19 +128,20 @@ nav {
   justify-content: space-between;
   margin: 0;
 }
-nav a {
+.nav-link {
   display: flex;
+}
+nav a {
   text-decoration: none;
   color: white;
   height: 5rem;
   justify-content: center;
   align-items: center;
 }
+
 .nav-link:hover {
-  text-decoration: none;
   color: white;
 }
-
 #nav-logo {
   display: none;
 }
@@ -156,7 +157,6 @@ nav a {
 #nav-contact {
   background-color: var(--sec-dark);
 }
-
 .active {
   text-decoration: underline;
   font-weight: 600;
@@ -235,6 +235,9 @@ svg {
   transition: all 5s ease-out;
   /* transform-origin: 50% 50%; */
 }
+.text-card > p {
+  margin-bottom: 1rem;
+}
 .text-card {
   display: flex;
   flex-direction: column;
@@ -289,8 +292,9 @@ svg {
 }
 
 /* -- ABOUT PAGE ------------------------------------------------- */
-.about-container > p {
-  margin-bottom: 2rem;
+.about-container > p,
+.contact-text > p {
+  margin-bottom: 1.5rem;
 }
 
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
@@ -446,7 +450,8 @@ footer {
 
   /* -- TABLET - ABOUT PAGE ------------------------------------------------- */
   .about-container {
-    max-width: 60vw;
+    max-width: 500px;
+    margin: auto;
   }
   /* -- TABLET - CTA ------------------------------------------------- */
 
