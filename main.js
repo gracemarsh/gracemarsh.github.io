@@ -2,28 +2,31 @@
 
 // SHOW ACTIVE NAV TAB
 
-let navLinks = document.querySelectorAll(".nav-link");
+// let navLinks = document.querySelectorAll(".nav-link");
+// console.log(navLinks);
 
-let activeNavTab = function (navLink) {
-  navLink.classList.add("active");
-};
+// let activeNavTab = function (navLink) {
+//   // navLink.classList.add("active");
+//   .navLink.setAttribute("id", "active");
 
-const paths = ["index", "about", "portfolio", "contact"];
-const currentPathUrl = window.location.pathname.split("/").slice(-1); // 'index.html'
-const isPageActive = paths.map((path) =>
-  currentPathUrl.some((x) => x.includes(path))
-);
-const activeIndex = isPageActive.indexOf(true);
-navLinks[activeIndex].classList.add("active");
+// };
 
-window.location.pathname
-  .split("/")
-  .slice(-1)
-  .some((x) => x.includes("portfolio"));
+// const paths = ["index", "about", "portfolio", "contact"];
+// const currentPathUrl = window.location.pathname.split("/").slice(-1); // 'index.html'
+// const isPageActive = paths.map((path) =>
+//   currentPathUrl.some((x) => x.includes(path))
+// );
+// const activeIndex = isPageActive.indexOf(true);
+// navLinks[activeIndex].classList.add("active");
 
-for (let i = 0; i < navLinks.length; i++) {
-  navLinks[i].addEventListener("click", activeNavTab);
-}
+// window.location.pathname
+//   .split("/")
+//   .slice(-1)
+//   .some((x) => x.includes("portfolio"));
+
+// for (let i = 0; i < navLinks.length; i++) {
+//   navLinks[i].addEventListener("click", activeNavTab);
+// }
 
 // TYPEWRITING ADVERT
 function typingAdvert() {
