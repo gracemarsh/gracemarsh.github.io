@@ -1,11 +1,8 @@
 // Double Cannon of Confetti
 var colors = ["#a33100", "#c5591b", "#f5af00", "#76704c", "#3f4634"];
-
-var avatarButton = document.querySelector("#avatar");
-console.log(avatarButton);
-
 var end = Date.now() + 1 * 1000;
-(function frame() {
+
+document.getElementById("avatar").onclick = function frame() {
   confetti({
     particleCount: 5,
     angle: 60,
@@ -24,4 +21,6 @@ var end = Date.now() + 1 * 1000;
   if (Date.now() < end) {
     requestAnimationFrame(frame);
   }
-})();
+};
+
+console.log(avatarButton);
