@@ -22,6 +22,14 @@ main section {
 .about-container {
   height: 50vh;
 }
+h1,
+h2,
+h3,
+h4,
+h5,
+p {
+  margin: 0;
+}
 /* -- VARIABLES ------------------------------------------------- */
 :root {
   --main-red: #a33100;
@@ -50,7 +58,10 @@ body {
 .index-header h2 {
   color: #1f2d16;
 }
-
+.index-header h2 {
+  margin-top: 0;
+  font-size: 3rem;
+}
 h1 {
   font-size: 4rem;
 }
@@ -66,6 +77,9 @@ h3 {
   margin-bottom: 3.5rem;
 }
 
+h4 {
+  margin-bottom: 2rem;
+}
 .contact-text {
   text-align: center;
 }
@@ -154,7 +168,6 @@ nav a {
   flex-direction: column;
   justify-content: center;
   position: relative;
-  /* transition: all 2000ms ease-out; */
 }
 .scrolled {
   height: 25vh;
@@ -199,13 +212,13 @@ svg {
 }
 
 .creativity-svg {
-  height: 162px;
+  height: 142px;
 }
 .human-svg {
-  height: 175px;
+  height: 155px;
 }
 .empathy-svg {
-  height: 165px;
+  height: 145px;
 }
 /* -- PORTFOLIO ------------------------------------------------- */
 .portfolio-container {
@@ -215,7 +228,20 @@ svg {
   align-items: center;
   width: 100%;
 }
-.card {
+.portfolio-img {
+  /* width: 25rem;
+  margin: 0;
+  border-radius: 1rem; */
+  transition: all 5s ease-out;
+  /* transform-origin: 50% 50%; */
+}
+.text-card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.card,
+.text-card {
   margin: 1rem 0;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0);
   border-radius: 0.5rem;
@@ -225,21 +251,46 @@ svg {
   width: 25rem;
 }
 
-.portfolio-img {
-  /* width: 25rem;
-  margin: 0;
-  border-radius: 1rem; */
-  transition: all 5s ease-out;
-  /* transform-origin: 50% 50%; */
-}
-
-.card:hover {
+.card:hover,
+.text-card:hover {
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
 }
 
+.overlay {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  height: 100%;
+  width: 100%;
+  opacity: 0;
+  transition: 0.5s ease;
+  background-color: var(--body-col);
+}
+
+.card:hover .overlay {
+  opacity: 0.7;
+}
+.text {
+  color: white;
+  font-size: 20px;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  -webkit-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
+  text-align: center;
+}
 /* image needs to zoom when parent card is hovered */
 .card:hover > .portfolio-img {
   transform: scale(1.1);
+}
+
+/* -- ABOUT PAGE ------------------------------------------------- */
+.about-container > p {
+  margin-bottom: 2rem;
 }
 
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
@@ -289,7 +340,7 @@ footer {
   fill: black;
   stroke: white;
 }
-.top-link {
+#to-top-btn {
   text-align: right;
   text-decoration: underline;
 }
@@ -304,13 +355,13 @@ footer {
   }
 
   .index-header h1 {
-    font-size: 6rem;
+    font-size: 9rem;
     color: white;
-    text-shadow: 0 0 35px #1f2d16;
+    text-shadow: 0 0 3px #1f2d16;
   }
   .index-header h2 {
     color: white;
-    text-shadow: 0 0 35px #1f2d16;
+    text-shadow: 0 0 4px #1f2d16;
   }
   /* -- TABLET - NAV ------------------------------------------------- */
   nav {
@@ -329,13 +380,20 @@ footer {
     margin: 0;
     padding: 1rem;
   }
-
+  .pre-advert {
+    border-radius: 0.5rem;
+  }
   .advert {
     display: flex;
     color: white;
     background-color: var(--main-orange);
     padding: 1rem;
     font-size: 30px;
+    border-radius: 0.5rem;
+    margin-bottom: 6rem;
+  }
+  .advert > p {
+    padding: 1rem;
   }
   .typing {
     position: relative;
@@ -384,6 +442,11 @@ footer {
 
   .card {
     margin: 2.5rem;
+  }
+
+  /* -- TABLET - ABOUT PAGE ------------------------------------------------- */
+  .about-container {
+    max-width: 60vw;
   }
   /* -- TABLET - CTA ------------------------------------------------- */
 

@@ -39,12 +39,12 @@
     </header>
     <main>
       <!-- advert -->
-      <section class="advert-container">
-        <p class="pre-advert">Do you find yourself asking ...</p>
+      <section class="advert-container"></section>    
+      <p class="pre-advert">Do you find yourself asking ...</p>
         <br />
         <div class="advert">
-          <p class="advert">Why is my website ...</p>
-          <p class="advert typing"></p>
+          <p >Why is my website ...</p>
+          <p class="typing"></p>
         </div>
         <!-- JS GOES HERE to generate the typewriting-->
       </section>
@@ -303,15 +303,47 @@
         <div class="portfolio-container">
           <div class="card">
             <img src="images/project-game.png" class="portfolio-img" style="cursor:pointer" />
+            <div class="overlay">
+              <a
+                class="text"
+                href="./portfolio.html#project-game"
+                target="_blank"
+                >See More</a
+              >
+          </div>
           </div>
           <div class="card">
             <img src="images/project-style.png" class="portfolio-img" style="cursor:pointer" />
+            <div class="overlay">
+              <a
+                class="text"
+                href="./portfolio.html#project-style"
+                target="_blank"
+                >See More</a
+              >
+          </div>
           </div>
           <div class="card">
             <img src="images/project-form.png" class="portfolio-img" style="cursor:pointer" />
+            <div class="overlay">
+              <a
+                class="text"
+                href="./portfolio.html#project-form"
+                target="_blank"
+                >See More</a
+              >
+          </div>
           </div>
           <div class="card">
             <img src="images/project-gallery.png" class="portfolio-img" style="cursor:pointer" />
+            <div class="overlay">
+              <a
+                class="text"
+                href="./portfolio.html#project-gallery"
+                target="_blank"
+                >See More</a
+              >
+          </div>
           </div>
         </div>
       </section>
@@ -416,7 +448,7 @@
         </svg>  
         </a>
       </section>
-      <a href="#top" class="top-link">Back to Top</a>
+      <a href="#top" id="to-top-btn" title="Go to top" onclick="topFunction()">Back to Top</a>
     </section>
     </footer>
     <script
