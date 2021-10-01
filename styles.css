@@ -341,6 +341,10 @@ svg {
   border: none;
   background-color: none;
 }
+
+iframe {
+  border: none;
+}
 /* -- FOOTER ------------------------------------------------- */
 footer {
   background-color: var(--sec-dark);
