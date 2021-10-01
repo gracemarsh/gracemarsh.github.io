@@ -26,42 +26,55 @@ for (let i = 0; i < navLinks.length; i++) {
 }
 
 // TYPEWRITING ADVERT
-console.log("hello everything is ok");
+function typingAdvert() {
+  const phrases = [
+    "so slow?",
+    "not getting new leads?",
+    "outdated?",
+    "always breaking?",
+    "mobile incompatible?",
+    "confusing visitors?",
+    "lacking SEO?",
+    "lacking accessibility?",
+  ];
 
-const texts = [
-  "so slow?",
-  "not getting new leads?",
-  "outdated?",
-  "always breaking?",
-  "mobile incompatible?",
-  "confusing visitors?",
-  "lacking SEO?",
-  "lacking accessibility?",
-];
+  let count = 0;
+  let index = 0;
+  let currentText = "";
+  let letter = "";
 
-let count = 0;
-let index = 0;
-let currentText = "";
-let letter = "";
+  function type() {
+    if (!document.querySelector("#typing")) {
+      console.error("#typing element for typing advert not found");
+      return;
+    }
+    if (count === phrases.length) {
+      count = 0;
+    }
 
-(function type() {
-  if (document.querySelector("#typing")) {
-    return;
+    currentText = phrases[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector("#typing").textContent = letter;
+
+    const isPhraseComplete = letter.length === currentText.length;
+
+    const typeNextLetter = () => setTimeout(type, 150);
+
+    const typeNextWord = () => {
+      count++;
+      index = 0;
+      setTimeout(type, 1500);
+    };
+
+    if (isPhraseComplete) {
+      typeNextWord();
+    } else {
+      typeNextLetter();
+    }
   }
-  if (count === texts.length) {
-    count = 0;
-  }
 
-  currentText = texts[count];
-  letter = currentText.slice(0, ++index);
+  type();
+}
 
-  document.querySelector("#typing").textContent = letter;
-
-  if (letter.length === currentText.length) {
-    count++;
-    index = 0;
-    setTimeout(type, 1500);
-  } else {
-    setTimeout(type, 150);
-  }
-})();
+typingAdvert();

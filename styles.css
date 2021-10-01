@@ -1,12 +1,9 @@
-/* 
-Link to more than 6 projects.
-Use SVG images for contact information icons.
-*/
-
-/* why can't I get   NAV LINKS TO : text-align: center; seems like bootstrap is overriding my css?*/
 /* -- MAIN STYLES ------------------------------------------------- */
 * {
   box-sizing: border-box;
+}
+html {
+  scroll-behavior: smooth;
 }
 body {
   position: relative;
@@ -31,6 +28,7 @@ p {
   --main-red: #a33100;
   --main-orange: #c5591b;
   --main-yellow: #f5af00;
+  --main-yellow-10percent: #f5b00035;
   --sec-green: #76704c;
   --sec-dark: #3f4634;
   --body-col: #1f2d16;
@@ -41,40 +39,47 @@ p {
 
 /* -- FONTS ------------------------------------------------- */
 body {
-  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
   color: var(--body-col);
   margin: 0;
   text-align: center;
+  line-height: 2;
+  font-size: 18px;
 }
 
 .index-header h1 {
   font-size: 6rem;
 }
-.index-header h1,
-.index-header h2 {
-  color: #1f2d16;
-}
 .index-header h2 {
   margin-top: 0;
   font-size: 3rem;
 }
-h1 {
-  font-size: 4rem;
+.index-header h1,
+.index-header h2 {
+  color: white;
+  text-shadow: 0 0 2.5px var(--main-orange);
 }
-h1,
+h1 {
+  font-family: "Scheherazade", serif;
+  font-size: 6rem;
+  margin: 4.5rem 0 3.5rem;
+}
 h2 {
-  font-family: "Scheherazade New", serif;
-  margin: 3.5rem 0;
+  font-family: "Scheherazade", serif;
+  font-size: 3rem;
+  margin: 3rem 0;
 }
 
-h1,
-h2,
 h3 {
-  margin-bottom: 3.5rem;
+  margin-bottom: 3rem;
+  font-size: 2rem;
 }
 
 h4 {
   margin-bottom: 2rem;
+}
+p {
+  font-size: 18px;
 }
 .contact-text {
   text-align: center;
@@ -89,7 +94,7 @@ h4 {
   align-items: stretch;
   justify-content: space-evenly;
   z-index: -1;
-  opacity: 0.2;
+  opacity: 0.8;
 }
 
 .background > div {
@@ -118,29 +123,9 @@ h4 {
   border-radius: 0.5rem;
 }
 /* -- NAV ------------------------------------------------- */
-nav {
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-  margin: 0;
-}
-.nav-link {
-  display: flex;
-}
-nav a {
-  text-decoration: none;
-  color: white;
-  height: 5rem;
-  justify-content: center;
-  align-items: center;
-}
-
-.nav-link:hover {
-  color: white;
-}
-#nav-logo {
-  display: none;
-}
+/* -- NAV - COMMON TO ALL BREAKPOINTS------------------------------------------------- */
+#nav-mobile-bootstrap,
+.nav-home,
 #nav-home {
   background-color: var(--main-red);
 }
@@ -153,9 +138,44 @@ nav a {
 #nav-contact {
   background-color: var(--sec-dark);
 }
-.active {
-  text-decoration: underline;
-  font-weight: 600;
+/* -- NAV - MOBILE - BOOTSTRAP------------------------------------------------- */
+
+#nav-mobile-bootstrap .navbar-toggler {
+  margin-bottom: 1rem;
+}
+#nav-mobile-bootstrap.navbar-dark .navbar-nav .nav-link {
+  color: white;
+}
+
+/* -- NAV (OG) HIDDEN IN MOBILE ------------------------------------------------- */
+#nav-not-mobile {
+  display: flex;
+  justify-content: space-between;
+  margin: 0;
+}
+#nav-not-mobile .nav-link {
+  display: flex;
+  width: 25%;
+}
+#nav-not-mobile a {
+  text-decoration: none;
+  color: white;
+  height: 5rem;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Only controls visibility of the two navs (toggle between the two) */
+#nav-not-mobile {
+  display: none;
+}
+@media (min-width: 768px) {
+  #nav-not-mobile {
+    display: flex;
+  }
+  #nav-mobile-bootstrap {
+    display: none;
+  }
 }
 /* -- HEADER ------------------------------------------------- */
 .index-header {
@@ -177,6 +197,9 @@ nav a {
 #avatar {
   width: 10rem;
   border-radius: 50%;
+}
+#avatar:hover {
+  cursor: pointer;
 }
 svg {
   width: 100%;
@@ -203,6 +226,7 @@ svg {
   text-align: center;
   padding: 1rem 0;
   margin: 0;
+  font-size: 16px;
 }
 
 .creativity-svg {
@@ -223,36 +247,41 @@ svg {
   width: 100%;
 }
 .portfolio-img {
-  /* width: 25rem;
-  margin: 0;
-  border-radius: 1rem; */
   transition: all 5s ease-out;
-  /* transform-origin: 50% 50%; */
+  max-width: 100%;
 }
 .text-card > p {
   margin-bottom: 1rem;
+  padding: 0 1rem;
+}
+.text-card > a {
+  color: var(--main-orange);
 }
 .text-card {
-  display: flex;
   flex-direction: column;
   justify-content: center;
 }
 .card,
 .text-card {
+  display: flex;
   margin: 1rem 0;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0);
+  box-shadow: 0 0 2px var(--col-light);
   border-radius: 0.5rem;
   overflow: hidden;
   transition: all 0.2s ease;
-  aspect-ratio: 16/9;
-  width: 25rem;
+  width: 26rem;
+  height: 17rem;
+  align-content: space-between;
 }
 
 .card:hover,
 .text-card:hover {
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+  box-shadow: 0 5px 20px var(--col-light);
+  transform: translateY(-5px);
 }
-
+.card:hover {
+  border-color: var(--col-light);
+}
 .overlay {
   position: absolute;
   top: 0;
@@ -263,15 +292,15 @@ svg {
   width: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: var(--body-col);
+  background-color: var(--main-yellow);
 }
-
 .card:hover .overlay {
   opacity: 0.7;
 }
 .text {
   color: white;
-  font-size: 20px;
+  font-size: 28px;
+  font-weight: 400;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -279,6 +308,11 @@ svg {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
+  padding: 1rem;
+}
+
+.overlay a:hover {
+  color: var(--body-col);
 }
 /* image needs to zoom when parent card is hovered */
 .card:hover > .portfolio-img {
@@ -302,6 +336,10 @@ svg {
 }
 #cta:active {
   border: none;
+}
+.btn-primary {
+  border: none;
+  background-color: none;
 }
 /* -- FOOTER ------------------------------------------------- */
 footer {
@@ -338,39 +376,29 @@ footer {
   fill: black;
   stroke: white;
 }
-#to-top-btn {
-  text-align: right;
+#index-top-btn {
+  color: var(--body-col);
+  text-decoration: underline;
+}
+#portfolio-top-btn {
+  color: white;
+
   text-decoration: underline;
 }
 /* -- TABLET ------------------------------------------------- */
 @media (min-width: 768px) {
+  .index-header h1 {
+    font-size: 9rem;
+  }
+  .index-header h2 {
+  }
+
+  /* -- TABLET - ADVERT ------------------------------------------------- */
   .advert-container {
     display: block;
   }
-
-  .background {
-    opacity: 0.8;
-  }
-
-  .index-header h1 {
-    font-size: 9rem;
-    color: white;
-    text-shadow: 0 0 3px #1f2d16;
-  }
-  .index-header h2 {
-    color: white;
-    text-shadow: 0 0 4px #1f2d16;
-  }
-  /* -- TABLET - NAV ------------------------------------------------- */
-  nav {
-    flex-direction: row;
-  }
-  nav a {
-    width: 25%;
-  }
-  /* -- TABLET - ADVERT ------------------------------------------------- */
   .pre-advert {
-    font-size: 20px;
+    font-size: 24px;
     font-style: italic;
     display: flex;
     color: white;
@@ -386,12 +414,12 @@ footer {
     color: white;
     background-color: var(--main-orange);
     padding: 1rem;
-    font-size: 30px;
     border-radius: 0.5rem;
     margin-bottom: 6rem;
   }
   .advert > p {
     padding: 1rem;
+    font-size: 28px;
   }
   #typing {
     position: relative;
@@ -432,11 +460,6 @@ footer {
     flex-direction: row;
     justify-content: center;
   }
-  .portfolio {
-    width: 350px;
-    height: 300px;
-    /* margin: 15px; */
-  }
 
   .card {
     margin: 2.5rem;
@@ -444,11 +467,12 @@ footer {
 
   /* -- TABLET - ABOUT PAGE ------------------------------------------------- */
   .about-container {
-    max-width: 500px;
-    margin: 0 auto 10rem;
+    max-width: 40rem;
+    margin: 0 auto 8rem;
   }
   .about-text-container {
     background-color: white;
+    padding: 1rem;
     opacity: 0.8;
     z-index: 2;
     position: relative;
@@ -497,10 +521,6 @@ footer {
   #cta {
     font-size: 40px;
   }
-  .btn-primary {
-    border: none;
-    background-color: none;
-  }
 }
 /* -- TABLET - FOOTER ------------------------------------------------- */
 .index-footer {
@@ -516,7 +536,7 @@ footer {
   }
   main,
   .footer-container {
-    max-width: 1000px;
+    width: 1000px;
     margin: auto;
   }
 
@@ -528,8 +548,11 @@ footer {
 
   /* -- DESKTOP - PORTFOLIO ------------------------------------------------- */
 
-  .portfolio {
+  .portfolio-container {
+    max-width: 1500px;
+  }
+  /* .portfolio {
     width: 29rem;
     height: 350px;
-  }
+  } */
 }

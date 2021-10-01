@@ -13,11 +13,7 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,300;0,400;0,500;0,600;1,200;1,300;1,400&family=Scheherazade+New:wght@400;700&display=swap"
-      rel="stylesheet"
-    />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Scheherazade+New:wght@400;700&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;900&family=Scheherazade:wght@400;700&display=swap"
       rel="stylesheet"
     />
     <link href="./normalize.css" rel="stylesheet" />
@@ -26,14 +22,47 @@
     <title>Grace Notes Web Solutions</title>
   </head>
   <body>
-    <nav>
+    <div id="top"></div>
+
+    <nav id="nav-mobile-bootstrap" class="navbar navbar-expand-lg navbar-dark">
+      <a class="nav-home navbar-brand nav-link" href="index.html">GraceNotes</a>
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarNav"
+        aria-controls="navbarNav"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a id="nav-about" class="nav-link" href="about.html">About Me</a>
+          </li>
+          <li class="nav-item">
+            <a id="nav-portfolio" class="nav-link" href="portfolio.html"
+              >Portfolio</a
+            >
+          </li>
+          <li class="nav-item">
+            <a id="nav-contact" class="nav-link" href="contact.html"
+              >Let's Chat</a
+            >
+          </li>
+        </ul>
+      </div>
+    </nav>
+    <nav id="nav-not-mobile">
       <a id="nav-home" class="nav-link" href="index.html">Home</a>
       <a id="nav-about" class="nav-link" href="about.html">About Me</a>
       <a id="nav-portfolio" class="nav-link" href="portfolio.html">Portfolio</a>
       <a id="nav-contact" class="nav-link" href="contact.html">Let's Chat</a>
     </nav>
     <header>
-      <h1>Our work</h1>
+      <h1 id="portfolio-heading">Our work</h1>
     </header>
     <main>
       <section>
@@ -49,12 +78,11 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-game">JS Powered Browser Game</h4>
+          <div class="text-card" id="project-game">
+            <h4>JS Powered Browser Game</h4>
             <p>
-              “Wheel of Success” is a fun word guessing game where players will
-              click letters from an onscreen keyboard to try to guess a random
-              phrase.
+              “Wheel of Success” is a fun word game where players choose letters
+              to try guess a random phrase.
             </p>
             <a
               href="https://github.com/gracemarsh/game-show-app"
@@ -73,12 +101,11 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-gallery">Interactive Photo Gallery</h4>
+          <div class="text-card" id="project-gallery">
+            <h4>Interactive Photo Gallery</h4>
             <p>
               Using JavaScript and CSS Grid Layout, this photo gallery allows
-              users to search for key terms and hides/shows pictures based on
-              user input.
+              users to search for photos using key terms.
             </p>
             <a
               href="https://github.com/gracemarsh/photo_gallery"
@@ -97,8 +124,8 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-form">Accessibile Form #a11y</h4>
+          <div class="text-card" id="project-form">
+            <h4>Accessibile Form #a11y</h4>
             <p>
               This is a responsive, mobile-friendly registration form that
               adheres to accessibility guidelines.
@@ -120,12 +147,11 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-style">Getting Sassy</h4>
+          <div class="text-card" id="project-style">
+            <h4>Getting Sassy</h4>
             <p>
-              In this project I converted CSS into Sass by splitting the code
-              into several Sass partial files. I also stored repeated values
-              (length units, colors, etc.) throughout the CSS as Sass variables.
+              This project converts CSS into Sass by splitting the code into
+              several Sass files and storing repeated values as Sass variables.
             </p>
             <a href="https://github.com/gracemarsh/style-guide" target="_blank"
               >View the code on GitHub</a
@@ -142,8 +168,8 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-conf">Bootsrap Design</h4>
+          <div class="text-card" id="project-conf">
+            <h4>Bootsrap Design</h4>
             <p>
               This attractive and responsive, mobile-friendly website was built
               using Bootstrap for a faux Full Stack Conference.
@@ -165,11 +191,11 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-app">JS Web App</h4>
+          <div class="text-card" id="project-app">
+            <h4>JS Web App</h4>
             <p>
-              Starting with a mockup I’ve built a web dashboard complete with
-              JavaScript-driven charts and graphs.
+              This web dashboard is complete with JavaScript-driven charts and
+              graphs.
             </p>
             <a
               href="https://github.com/gracemarsh/webapp-dashboard"
@@ -188,12 +214,11 @@
               >
             </div>
           </div>
-          <div class="text-card">
-            <h4 id="project-directory">API Employee Directory</h4>
+          <div class="text-card" id="project-directory">
+            <h4>API Employee Directory</h4>
             <p>
-              This website uses a Random User Generator API to grab information
-              for 12 random “employees” to create a protoype Employee Directory
-              for an Awesome StartUp.
+              This protoype Employee Directory uses a Random User Generator API
+              to grab information for 12 random “employees”.
             </p>
             <a
               href="https://github.com/gracemarsh/webapp-dashboard"
@@ -352,6 +377,13 @@
             </svg>
           </a>
         </section>
+        <a
+          href="#top"
+          id="portfolio-top-btn"
+          title="Go to top"
+          onclick="topFunction()"
+          >Back to Top</a
+        >
       </section>
     </footer>
     <script
