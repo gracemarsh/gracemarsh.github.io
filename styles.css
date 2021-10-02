@@ -9,7 +9,7 @@ body {
   position: relative;
 }
 main {
-  margin: 3rem;
+  margin: 1rem;
 }
 
 main section {
@@ -80,6 +80,7 @@ h4 {
 }
 p {
   font-size: 18px;
+  margin-bottom: 2rem;
 }
 .contact-text {
   text-align: center;
@@ -125,17 +126,16 @@ p {
 /* -- NAV ------------------------------------------------- */
 /* -- NAV - COMMON TO ALL BREAKPOINTS------------------------------------------------- */
 #nav-mobile-bootstrap,
-.nav-home,
-#nav-home {
+.nav-home {
   background-color: var(--main-red);
 }
-#nav-about {
+.nav-about {
   background-color: var(--main-orange);
 }
-#nav-portfolio {
+.nav-portfolio {
   background-color: var(--main-yellow);
 }
-#nav-contact {
+.nav-contact {
   background-color: var(--sec-dark);
 }
 /* #active {
@@ -202,6 +202,7 @@ p {
 #avatar {
   width: 10rem;
   border-radius: 50%;
+  margin-bottom: 3rem;
 }
 #avatar:hover {
   cursor: pointer;
@@ -266,16 +267,17 @@ svg {
   flex-direction: column;
   justify-content: center;
 }
+.card {
+  max-height: 12.5rem;
+}
 .card,
 .text-card {
   display: flex;
-  margin: 1rem 0;
+  margin-bottom: 5rem;
   box-shadow: 0 0 2px var(--col-light);
   border-radius: 0.5rem;
   overflow: hidden;
   transition: all 0.2s ease;
-  width: 26rem;
-  height: 17rem;
   align-content: space-between;
 }
 
@@ -323,13 +325,24 @@ svg {
 .card:hover > .portfolio-img {
   transform: scale(1.1);
 }
-
-/* -- ABOUT PAGE ------------------------------------------------- */
-.about-text-container > p,
-.contact-text > p {
-  margin-bottom: 2rem;
+/* because the card sizing is a bit funny */
+@media (min-width: 375px) {
+  .card {
+    width: 19rem;
+    max-height: 14rem;
+  }
 }
 
+@media (min-width: 500px) {
+  main,
+  .footer-container {
+    margin: 3rem;
+  }
+}
+/* -- ABOUT PAGE ------------------------------------------------- */
+.about-container {
+  margin-bottom: 4rem;
+}
 /* -- CTA - Keen to Chat button ------------------------------------------------- */
 #cta {
   display: block;
@@ -344,7 +357,6 @@ svg {
 }
 .btn-primary {
   border: none;
-  background-color: none;
 }
 
 iframe {
@@ -396,6 +408,9 @@ footer {
 }
 /* -- TABLET ------------------------------------------------- */
 @media (min-width: 768px) {
+  /* main {
+    margin: 3rem;
+  } */
   .index-header h1 {
     font-size: 9rem;
   }
@@ -471,9 +486,17 @@ footer {
   }
 
   .card {
-    margin: 2.5rem;
+    margin-right: 1rem;
+    max-height: 17rem;
   }
-
+  .text-card {
+    margin-left: 1rem;
+  }
+  .card,
+  .text-card {
+    width: 26rem;
+    height: 17rem;
+  }
   /* -- TABLET - ABOUT PAGE ------------------------------------------------- */
   .about-container {
     max-width: 40rem;
@@ -483,8 +506,10 @@ footer {
     background-color: white;
     padding: 1rem;
     opacity: 0.8;
-    z-index: 2;
     position: relative;
+  }
+  #avatar {
+    margin: 0;
   }
   .floating-head {
     width: 150px;
@@ -492,7 +517,7 @@ footer {
     position: absolute;
     top: 5%;
     left: 0;
-    z-index: 1;
+    z-index: -1;
   }
   #about-footer {
     position: relative;
