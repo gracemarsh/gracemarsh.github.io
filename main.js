@@ -1,42 +1,35 @@
-// Need Multiple JavaScript interactions.
-
 // SHOW ACTIVE NAV TAB
+function activeNav() {
+  const paths = window.location.pathname.split("/");
+  const currentFileName = paths[paths.length - 1]; // 'index.html'
 
-// let navLinks = document.querySelectorAll(".nav-link");
-// const currentFileName = window.location.pathname.split("/").at(-1); // 'index.html'
-// var navLinkName;
+  const setActive = (selector) => {
+    const nodes = document.querySelectorAll(selector);
+    for (var i = 0; i < nodes.length; i++) {
+      nodes[i].classList.add("active");
+    }
+  };
 
-// switch (currentFileName) {
-//   case "index.html":
-//     navLinkName = document.querySelectorAll(".nav-home");
-//     navLinkName.classList.add("active");
-//     Array.from(navLinkName);
-//     break;
-//   case "about.html":
-//     navLinkName = document
-//       .querySelectorAll(".nav-about")
-//       .classList.add("active");
-//     Array.from(navLinkName);
-//     break;
-//   case "portfolio.html":
-//     navLinkName = document
-//       .querySelectorAll(".nav-portfolio")
-//       .classList.add("active");
-//     Array.from(navLinkName);
-//     break;
-//   case "contact.html":
-//     navLinkName = document
-//       .querySelectorAll(".nav-contact")
-//       .classList.add("active");
-//     Array.from(navLinkName);
-//     break;
-//   default:
-//     console.error("no active link found");
-//     break;
-// }
+  switch (currentFileName) {
+    case "index.html":
+      setActive(".nav-home");
+      break;
+    case "about.html":
+      setActive(".nav-about");
+      break;
+    case "portfolio.html":
+      setActive(".nav-portfolio");
+      break;
+    case "contact.html":
+      setActive(".nav-contact");
+      break;
+    default:
+      setActive(".nav-home");
+      break;
+  }
+}
 
-// const activeIndex = isPageActive.indexOf(true);
-// navLinks[activeIndex].classList.add("active");
+activeNav();
 
 // TYPEWRITING ADVERT
 function typing() {
@@ -93,3 +86,48 @@ function typing() {
 }
 
 typing();
+
+// Double Cannon of Confetti
+
+function surprise() {
+  var colors = ["#a33100", "#c5591b", "#f5af00", "#76704c", "#3f4634"];
+
+  document.getElementById("avatar")?.addEventListener("click", frame);
+
+  function frame() {
+    let count = 0;
+
+    function drawConfetti() {
+      const hasConfetti = typeof window["confetti"] !== "undefined";
+      if (!hasConfetti) {
+        console.log("confetti not loaded");
+        return;
+      }
+      // eslint-disable-next-line no-undef
+      confetti({
+        particleCount: 7,
+        angle: 60,
+        spread: 55,
+        origin: { x: 0 },
+        colors: colors,
+      });
+      // eslint-disable-next-line no-undef
+      confetti({
+        particleCount: 7,
+        angle: 120,
+        spread: 55,
+        origin: { x: 1 },
+        colors: colors,
+      });
+
+      if (count < 60) {
+        count++;
+        requestAnimationFrame(drawConfetti); // 60fps || 30fps
+      }
+    }
+
+    drawConfetti();
+  }
+}
+
+surprise();

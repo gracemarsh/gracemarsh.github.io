@@ -127,27 +127,40 @@ p {
 /* -- NAV - COMMON TO ALL BREAKPOINTS------------------------------------------------- */
 #nav-mobile-bootstrap,
 .nav-home {
-  background-color: var(--main-red);
+  --nav-colour: var(--main-red);
+  background: var(--nav-colour);
 }
 .nav-about {
-  background-color: var(--main-orange);
+  --nav-colour: var(--main-orange);
+  background: var(--nav-colour);
 }
 .nav-portfolio {
-  background-color: var(--main-yellow);
+  --nav-colour: var(--main-yellow);
+  background: var(--nav-colour);
 }
 .nav-contact {
-  background-color: var(--sec-dark);
+  --nav-colour: var(--sec-dark);
+  background: var(--nav-colour);
 }
-.active {
+#nav-not-mobile .active {
   font-weight: 900;
-  text-decoration: underline;
-  color: red;
 }
-/* -- NAV - MOBILE - BOOTSTRAP------------------------------------------------- */
 
-#nav-mobile-bootstrap .navbar-toggler {
-  margin-bottom: 1rem;
+nav#nav-not-mobile > a.nav-link.active {
+  text-decoration: underline;
+  position: relative;
 }
+
+#nav-not-mobile > a.nav-link.active::after {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 6px;
+  background: var(--nav-colour);
+  bottom: -10px;
+}
+
+/* -- NAV - MOBILE - BOOTSTRAP------------------------------------------------- */
 #nav-mobile-bootstrap.navbar-dark .navbar-nav .nav-link {
   color: white;
 }
@@ -163,7 +176,6 @@ p {
   width: 25%;
 }
 #nav-not-mobile a {
-  text-decoration: none;
   color: white;
   height: 5rem;
   justify-content: center;
@@ -197,10 +209,9 @@ p {
   width: 10rem;
   border-radius: 50%;
   margin-bottom: 3rem;
-}
-#avatar:hover {
   cursor: pointer;
 }
+
 svg {
   width: 100%;
 }
@@ -506,8 +517,8 @@ footer {
     margin: 0;
   }
   .floating-head {
-    width: 150px;
-    height: 150px;
+    width: 160px;
+    height: 160px;
     position: absolute;
     top: 5%;
     left: 0;
@@ -582,4 +593,10 @@ footer {
     width: 29rem;
     height: 350px;
   } */
+}
+
+/* Hacky iframe fix */
+
+iframe {
+  width: 100%;
 }
