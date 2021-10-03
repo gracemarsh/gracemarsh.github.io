@@ -92,41 +92,49 @@ typing();
 function surprise() {
   var colors = ["#a33100", "#c5591b", "#f5af00", "#76704c", "#3f4634"];
 
-  document.getElementById("avatar")?.addEventListener("click", frame);
-
   function frame() {
     let count = 0;
+    const fire = window.confetti;
+    const hasLoaded = typeof fire === "function";
+
+    if (!hasLoaded) {
+      console.log("confetti not loaded");
+      return;
+    }
+
+    const fireLeft = {
+      particleCount: 7,
+      angle: 60,
+      spread: 55,
+      origin: { x: 0 },
+      colors,
+    };
+
+    const fireRight = {
+      particleCount: 7,
+      angle: 120,
+      spread: 55,
+      origin: { x: 1 },
+      colors,
+    };
 
     function drawConfetti() {
-      const hasConfetti = typeof window["confetti"] !== "undefined";
-      if (!hasConfetti) {
-        console.log("confetti not loaded");
-        return;
-      }
-      // eslint-disable-next-line no-undef
-      confetti({
-        particleCount: 7,
-        angle: 60,
-        spread: 55,
-        origin: { x: 0 },
-        colors: colors,
-      });
-      // eslint-disable-next-line no-undef
-      confetti({
-        particleCount: 7,
-        angle: 120,
-        spread: 55,
-        origin: { x: 1 },
-        colors: colors,
-      });
+      fire(fireLeft);
+      fire(fireRight);
 
       if (count < 60) {
         count++;
-        requestAnimationFrame(drawConfetti); // 60fps || 30fps
+        requestAnimationFrame(drawConfetti);
       }
     }
 
     drawConfetti();
+  }
+
+  const avatar = document.getElementById("avatar");
+
+  if (avatar) {
+    avatar.addEventListener("click", frame);
   }
 }
 
