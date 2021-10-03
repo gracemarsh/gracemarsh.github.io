@@ -183,18 +183,12 @@ p {
   }
 }
 /* -- HEADER ------------------------------------------------- */
-.index-header {
-  height: 40vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  position: relative;
-}
+
 .scrolled {
   height: 25vh;
 }
 /* -- TYPEWRITING ADVERT ------------------------------------------------- */
-.advert-container {
+.typing-container {
   display: none;
 }
 
@@ -266,6 +260,7 @@ svg {
 .text-card {
   flex-direction: column;
   justify-content: center;
+  padding: 1rem;
 }
 .card {
   max-height: 12.5rem;
@@ -414,14 +409,12 @@ footer {
   .index-header h1 {
     font-size: 9rem;
   }
-  .index-header h2 {
-  }
 
   /* -- TABLET - ADVERT ------------------------------------------------- */
-  .advert-container {
+  .typing-container {
     display: block;
   }
-  .pre-advert {
+  .pre-typing {
     font-size: 24px;
     font-style: italic;
     display: flex;
@@ -430,10 +423,10 @@ footer {
     margin: 0;
     padding: 1rem;
   }
-  .pre-advert {
+  .pre-typing {
     border-radius: 0.5rem;
   }
-  .advert {
+  .typing {
     display: flex;
     color: white;
     background-color: var(--main-orange);
@@ -441,7 +434,7 @@ footer {
     border-radius: 0.5rem;
     margin-bottom: 6rem;
   }
-  .advert > p {
+  .typing > p {
     padding: 1rem;
     font-size: 28px;
   }
@@ -507,6 +500,7 @@ footer {
     padding: 1rem;
     opacity: 0.8;
     position: relative;
+    z-index: 1;
   }
   #avatar {
     margin: 0;
@@ -517,7 +511,6 @@ footer {
     position: absolute;
     top: 5%;
     left: 0;
-    z-index: -1;
   }
   #about-footer {
     position: relative;

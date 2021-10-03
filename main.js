@@ -3,43 +3,43 @@
 // SHOW ACTIVE NAV TAB
 
 // let navLinks = document.querySelectorAll(".nav-link");
-const currentFileName = window.location.pathname.split("/").at(-1); // 'index.html'
-var navLinkName;
+// const currentFileName = window.location.pathname.split("/").at(-1); // 'index.html'
+// var navLinkName;
 
-switch (currentFileName) {
-  case "index.html":
-    navLinkName = document.querySelectorAll(".nav-home");
-    navLinkName.classList.add("active");
-    Array.from(navLinkName);
-    break;
-  case "about.html":
-    navLinkName = document
-      .querySelectorAll(".nav-about")
-      .classList.add("active");
-    Array.from(navLinkName);
-    break;
-  case "portfolio.html":
-    navLinkName = document
-      .querySelectorAll(".nav-portfolio")
-      .classList.add("active");
-    Array.from(navLinkName);
-    break;
-  case "contact.html":
-    navLinkName = document
-      .querySelectorAll(".nav-contact")
-      .classList.add("active");
-    Array.from(navLinkName);
-    break;
-  default:
-    console.error("no active link found");
-    break;
-}
+// switch (currentFileName) {
+//   case "index.html":
+//     navLinkName = document.querySelectorAll(".nav-home");
+//     navLinkName.classList.add("active");
+//     Array.from(navLinkName);
+//     break;
+//   case "about.html":
+//     navLinkName = document
+//       .querySelectorAll(".nav-about")
+//       .classList.add("active");
+//     Array.from(navLinkName);
+//     break;
+//   case "portfolio.html":
+//     navLinkName = document
+//       .querySelectorAll(".nav-portfolio")
+//       .classList.add("active");
+//     Array.from(navLinkName);
+//     break;
+//   case "contact.html":
+//     navLinkName = document
+//       .querySelectorAll(".nav-contact")
+//       .classList.add("active");
+//     Array.from(navLinkName);
+//     break;
+//   default:
+//     console.error("no active link found");
+//     break;
+// }
 
 // const activeIndex = isPageActive.indexOf(true);
 // navLinks[activeIndex].classList.add("active");
 
 // TYPEWRITING ADVERT
-function typingAdvert() {
+function typing() {
   const phrases = [
     "so slow?",
     "not getting new leads?",
@@ -58,7 +58,9 @@ function typingAdvert() {
 
   function type() {
     if (!document.querySelector("#typing")) {
-      console.error("#typing element for typing advert not found");
+      console.log(
+        "#typing element for typing typing not found - but that's ok if this isn't the index.html page"
+      );
       return;
     }
     if (count === phrases.length) {
@@ -90,4 +92,4 @@ function typingAdvert() {
   type();
 }
 
-typingAdvert();
+typing();
