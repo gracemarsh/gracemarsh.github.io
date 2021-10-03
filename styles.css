@@ -138,11 +138,11 @@ p {
 .nav-contact {
   background-color: var(--sec-dark);
 }
-/* #active {
+.active {
   font-weight: 900;
   text-decoration: underline;
   color: red;
-} */
+}
 /* -- NAV - MOBILE - BOOTSTRAP------------------------------------------------- */
 
 #nav-mobile-bootstrap .navbar-toggler {

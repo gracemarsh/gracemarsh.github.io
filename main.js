@@ -3,30 +3,40 @@
 // SHOW ACTIVE NAV TAB
 
 // let navLinks = document.querySelectorAll(".nav-link");
-// console.log(navLinks);
+const currentFileName = window.location.pathname.split("/").at(-1); // 'index.html'
+var navLinkName;
 
-// let activeNavTab = function (navLink) {
-//   // navLink.classList.add("active");
-//   .navLink.setAttribute("id", "active");
+switch (currentFileName) {
+  case "index.html":
+    navLinkName = document.querySelectorAll(".nav-home");
+    navLinkName.classList.add("active");
+    Array.from(navLinkName);
+    break;
+  case "about.html":
+    navLinkName = document
+      .querySelectorAll(".nav-about")
+      .classList.add("active");
+    Array.from(navLinkName);
+    break;
+  case "portfolio.html":
+    navLinkName = document
+      .querySelectorAll(".nav-portfolio")
+      .classList.add("active");
+    Array.from(navLinkName);
+    break;
+  case "contact.html":
+    navLinkName = document
+      .querySelectorAll(".nav-contact")
+      .classList.add("active");
+    Array.from(navLinkName);
+    break;
+  default:
+    console.error("no active link found");
+    break;
+}
 
-// };
-
-// const paths = ["index", "about", "portfolio", "contact"];
-// const currentPathUrl = window.location.pathname.split("/").slice(-1); // 'index.html'
-// const isPageActive = paths.map((path) =>
-//   currentPathUrl.some((x) => x.includes(path))
-// );
 // const activeIndex = isPageActive.indexOf(true);
 // navLinks[activeIndex].classList.add("active");
-
-// window.location.pathname
-//   .split("/")
-//   .slice(-1)
-//   .some((x) => x.includes("portfolio"));
-
-// for (let i = 0; i < navLinks.length; i++) {
-//   navLinks[i].addEventListener("click", activeNavTab);
-// }
 
 // TYPEWRITING ADVERT
 function typingAdvert() {
