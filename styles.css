@@ -128,22 +128,26 @@ p {
 #nav-mobile-bootstrap,
 .nav-home {
   --nav-colour: var(--main-red);
-  background: var(--nav-colour);
 }
 .nav-about {
   --nav-colour: var(--main-orange);
-  background: var(--nav-colour);
 }
 .nav-portfolio {
   --nav-colour: var(--main-yellow);
-  background: var(--nav-colour);
 }
 .nav-contact {
   --nav-colour: var(--sec-dark);
-  background: var(--nav-colour);
 }
 #nav-not-mobile .active {
   font-weight: 900;
+}
+
+#nav-mobile-bootstrap,
+.nav-home,
+.nav-about,
+.nav-portfolio,
+.nav-contact {
+  background: var(--nav-colour);
 }
 
 nav#nav-not-mobile > a.nav-link.active {
@@ -414,9 +418,6 @@ footer {
 }
 /* -- TABLET ------------------------------------------------- */
 @media (min-width: 768px) {
-  /* main {
-    margin: 3rem;
-  } */
   .index-header h1 {
     font-size: 9rem;
   }
