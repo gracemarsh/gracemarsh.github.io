@@ -321,8 +321,6 @@ svg {
   position: absolute;
   top: 50%;
   left: 50%;
-  -webkit-transform: translate(-50%, -50%);
-  -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%);
   text-align: center;
   padding: 1rem;
@@ -525,20 +523,17 @@ footer {
     top: 5%;
     left: 0;
   }
+
   #about-footer {
     position: relative;
   }
+
   .x {
     animation: x 13s linear infinite alternate;
   }
+
   .y {
     animation: y 7s linear infinite alternate;
-  }
-
-  @-webkit-keyframes x {
-    100% {
-      transform: translateX(calc(95vw - 100px));
-    }
   }
 
   @keyframes x {
@@ -546,11 +541,7 @@ footer {
       transform: translateX(calc(95vw - 100px));
     }
   }
-  @-webkit-keyframes y {
-    100% {
-      transform: translateY(calc(60vh - 100px));
-    }
-  }
+
   @keyframes y {
     100% {
       transform: translateY(calc(60vh - 100px));
@@ -562,6 +553,7 @@ footer {
     font-size: 40px;
   }
 }
+
 /* -- TABLET - FOOTER ------------------------------------------------- */
 .index-footer {
   background-color: white;
@@ -572,8 +564,6 @@ footer {
 }
 /* -- DESKTOP ------------------------------------------------- */
 @media (min-width: 1024px) {
-  body {
-  }
   main,
   .footer-container {
     width: 1000px;
